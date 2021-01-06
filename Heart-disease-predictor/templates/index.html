@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Heart Disease Prediction</title>
+
+    <!-- link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/checkout/"> -->
+
+    <!-- Bootstrap core CSS -->
+   <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+
+   <link  href="../static/css/custom-style.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../static/css/form_predict.css" rel="stylesheet"> 
+    
+  </head>
+
+  <body class="bg-light">
+
+    <div class="container">
+      <div class="py-5 text-center">
+        <h2>Heart Disease Predictor</h2>
+      </div>
+
+      <div class="row">
+
+        <div class="col-md-8 order-md-1">
+          <h4 class="mb-3">Inputs</h4>
+          <form class="predictor-inputs" method='post'>
+            <div class="mb-3">
+                <label for="age">Age</label>
+                <input type="number"  min="0" step="1" name="age" id="age" placeholder="" value="22" required>
+                <div class="invalid-feedback">
+                  Valid age is required.
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="sex">Sex 0-Male 1- Female</label>
+                <select class="custom-select d-block w-50" name="sex" id="sex" required>
+                    <option value="">Choose...</option>
+                    <option>0</option>
+                    <option>1</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Please select a valid category.
+                  </div>
+                </div>
+            <div class="mb-3">
+                <label for="cp">Chest pain type</label>
+                <select class="custom-select d-block w-50" id="cp" name="cp" required>
+                    <option value="">Choose...</option>
+                    <option>0</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Please select a valid chest pain type.
+                  </div>
+                </div>
+            
+            <div class="mb-3">
+                    <label for="trestbps">Resting blood pressure (in mm Hg on admission to the hospital)</label>
+                    <input type="number" min="0" step="0.1" class="form-control" name="trestbps" id="trestbps" placeholder="" value="" required>
+                    <div class="invalid-feedback">
+                      Valid blood pressure is required.
+                    </div>
+                  </div>
+            <div class="mb-3">
+                    <label for="chol">Serum Cholestral in mg/dl</label>
+                    <input type="number" min="0" step="0.1" class="form-control" name="chol" id="chol" placeholder="" value="" required>
+                    <div class="invalid-feedback">
+                      Valid cholestral value is required.
+                    </div>
+                  </div>
+            <div class="mb-3">
+                <label for="fbs">Fasting blood sugar > 120 mg/dl 0-False 1-True</label>
+                <select class="custom-select d-block w-50" name="fbs" id="fbs" required>
+                    <option value="">Choose...</option>
+                    <option>0</option>
+                    <option>1</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Please select a valid category.
+                  </div>
+                </div>
+            <div class="mb-3">
+                    <label for="restecg">Resting electrocardiographic results</label>
+                    <select class="custom-select d-block w-50" name="restecg" id="restecg" required>
+                        <option value="">Choose...</option>
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                      </select>
+                      <div class="invalid-feedback">
+                        Please select a valid category.
+                      </div>
+                    </div>
+            <div class="mb-3">
+                        <label for="thalach">Maximum Heart rate acheived</label>
+                        <input type="number" min="0" step="0.1" class="form-control" name="thalach" id="thalach" placeholder="" value="" required>
+                        <div class="invalid-feedback">
+                          Valid Heart rate is required.
+                        </div>
+                      </div>
+            <div class="mb-3">
+                    <label for="exang">Exercise Induced angina 0-yes 1-no</label>
+                    <select class="custom-select d-block w-50" name="exang" id="exang" required>
+                        <option value="">Choose...</option>
+                        <option>0</option>
+                        <option>1</option>
+                    </select>
+                      <div class="invalid-feedback">
+                        Please select a valid category.
+                      </div>
+                    </div>
+            <div class="mb-3">
+                    <label for="oldpeak">ST depression induced by exercise</label>
+                    <input type="number" min="0" class="form-control" name="oldpeak" id="oldpeak" placeholder="" value="" required>
+                    <div class="invalid-feedback">
+                      Valid cholestral value is required.
+                    </div>
+                  </div>
+
+            <div class="mb-3">
+                    <label for="slope">Slope of the peak exercise ST segment</label>
+                    <select class="custom-select d-block w-50" name="slope" id="slope" required>
+                        <option value="">Choose...</option>
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                    </select>
+                      <div class="invalid-feedback">
+                        Please select a valid category.
+                      </div>
+                    </div>
+
+            <div class="mb-3">
+                    <label for="ca">Number of major vessels (0-4) colored by fluoroscopy</label>
+                    <select class="custom-select d-block w-50" name="ca" id="ca" required>
+                        <option value="">Choose...</option>
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
+                      <div class="invalid-feedback">
+                        Please select a valid category.
+                      </div>
+                    </div>
+             <div class="mb-3">
+                    <label for="thal"> Blood flow level 0 = null, 1 = fixed defect found, 2 = blood flow is normal, 3 = reversible defect found</label>
+                    <select class="custom-select d-block w-50" name="thal" id="thal" required>
+                        <option value="">Choose...</option>
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                    </select>
+                      <div class="invalid-feedback">
+                        Please select a valid category.
+                      </div>
+                    </div>
+            <hr class="mb-4">
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Prediction</button>
+            <br>
+          <br>
+          {{ prediction }}
+          </form>
+          
+        </div>
+      </div>
+
+     
+    </div>
+
+  </body>
+</html>
